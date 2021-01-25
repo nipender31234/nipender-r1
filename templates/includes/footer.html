@@ -1,41 +1,29 @@
-<footer id="contact" class="container-fluid mt-5">
+<footer id="contact" class="container-fluid mt-5 bg-blood text-white">
 	<div class="container pt-3">
-		<div class="row content-ro">
-			<div class="col-lg-4 col-md-12 footer-links">
-				<!-- <div class="row no-margin mt-2">
-					<h2>More Products</h2>
-					<ul>
-						<li>Forum PHP Script</li>
-						<li>Edu Smart</li>
-						<li>Smart Event</li>
-						<li>Smart School</li>
-					</ul>
-				</div> -->
-			</div>
+		<div class="row d-flex justify-content-between position-relative">
 			<div class="col-lg-4 col-md-12 footer-links">
 				<div class="row no-margin mt-2">
 					<h2>Quick Links</h2>
-					<ul>
-						<li><a class="text-white" href="{% url 'index' %}">Home</a></li>
-						<li><a class="text-white" href="{% url 'aboutus' %}">About Us</a></li>
-						<li><a class="text-white" href="{% url 'contactus' %}">Contact US</a></li>
-						<!-- <li>Pricing</li> -->
-						<li><a class="text-white" href="{% url 'gallery' %}">Gallery</a></li>
+					<ul class="list-group-flush">
+						<li class="list-group-item bg-blood border-bottom-0"><a class="nav-link p-0 text-white" href="{% url 'index' %}">Home</a></li>
+						<li class="list-group-item bg-blood border-bottom-0"><a class="nav-link p-0 text-white" href="{% url 'aboutus' %}">About Us</a></li>
+						<li class="list-group-item bg-blood border-bottom-0"><a class="nav-link p-0 text-white" href="{% url 'contactus' %}">Contact US</a></li>
+						<li class="list-group-item bg-blood border-bottom-0"><a class="nav-link p-0 text-white" href="{% url 'gallery' %}">Gallery</a></li>
 					</ul>
 				</div>
 			</div>
-			<div class="col-lg-4 col-md-12 footer-form">
-				<div class="form-card">
-					<div class="form-title">
+			<div class="col-lg-4 col-md-12 bg-white p-0 position-absolute feedback-div">
+				<div class="form-card border px-4 pb-4 pt-3">
+					<div class="form-title text-dark">
 						<h4>Feedback & Query</h4>
 					</div>
 					<div class="form-body">
 						<form action="{% url 'feedback' %}" method="POST">
 							{% csrf_token %}
 							<input name="name" type="text" placeholder="Enter Name" class="form-control" required>
-							<input name="contact" type="text" placeholder="Enter Mobile no" class="form-control" required>
+							<input name="contact" type="text" placeholder="Enter Mobile no" class="form-control my-3" required>
 							<input name="message" type="text" placeholder="Your Message" class="form-control" required>
-							<button  type="submit" class="btn btn-sm btn-primary btn-block">Send Request</a></button>
+							<button  type="submit" class="btn btn-sm btn-success btn-block mt-3">Send Request</a></button>
 						</form>
 					</div>
 				</div>
@@ -44,7 +32,7 @@
 		<div class="footer-copy">
 			<div class="row">
 				<div class="col-lg-8 col-md-6">
-					<p>Copyright © <a href="#">nipendersingh.com</a> | All right reserved.</p>
+					<p class="d-flex">Copyright © <a class="nav-link p-0 text-white" href="https://nipender-donateblood.herokuapp.com/">nipender-donateblood.com</a> | All right reserved.</p>
 				</div>
 				<!-- <div class="col-lg-4 col-md-6 socila-link">
 					<ul>

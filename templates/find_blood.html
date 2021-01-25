@@ -32,13 +32,13 @@
 						<option value="Delhi" {% if request.GET.location == 'Delhi' %}selected{%endif%}>Delhi</option>
 						<option value="Jaipur" {% if request.GET.location == 'Jaipur' %}selected{%endif%}>Jaipur</option>
 						<option value="Dhampur" {% if request.GET.location == 'Dhampur' %}selected{%endif%}>Dhampur</option>
-						<option value="Varanasi">Varanasi</option>
-						<option value="Udaipur">Udaipur</option>
-						<option value="Chennai">Chennai</option>
-						<option value="Bijnor">Bijnor</option>
-						<option value="Noorpur">Noorpur</option>
-						<option value="Kritpur">Kritpur</option>
-						<option value="chandpur">chandpur</option>
+						<option value="Varanasi" {% if request.GET.location == 'Varanasi' %}selected{%endif%}>Varanasi</option>
+						<option value="Udaipur" {% if request.GET.location == 'Udaipur' %}selected{%endif%}>Udaipur</option>
+						<option value="Chennai" {% if request.GET.location == 'Chennai' %}selected{%endif%}>Chennai</option>
+						<option value="Bijnor" {% if request.GET.location == 'Bijnor' %}selected{%endif%}>Bijnor</option>
+						<option value="Noorpur" {% if request.GET.location == 'Noorpur' %}selected{%endif%}>Noorpur</option>
+						<option value="Kritpur" {% if request.GET.location == 'Kritpur' %}selected{%endif%}>Kritpur</option>
+						<option value="chandpur" {% if request.GET.location == 'chandpur' %}selected{%endif%}>chandpur</option>
 					</select>
 				</div>
 			</div>
@@ -68,7 +68,7 @@
 		</section>
 	{% else %}
 		<section class="contianer-fluid pt-0 text-center">
-			<p class="search"><h3> No available Donors</h3></p>
+			<p class="search"><h3> No available Donors</h3></p><br><br>
 		</section>
 	{% endif %}
 

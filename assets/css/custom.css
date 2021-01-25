@@ -1,0 +1,56 @@
+.bg-blood{
+	background-color: #de1f26;
+}
+.height-50{
+	height: 50px;
+}
+.session-title{
+	padding: 30px;
+	margin: 0px;
+}
+.session-title h2{
+	width: 100%;
+	text-align: center;
+	font-family: 'Merriweather', serif;
+	font-weight: 400;
+}
+.session-title p{
+	max-width: 850px;
+	text-align: center;
+	float: none;
+	margin: auto;
+}
+.session-title span{
+	float: right;
+	font-style: italic;
+}
+.gallery{
+	padding: 50px;
+	background-color: #f1f1f152; 
+}
+@media screen and (max-width: 940px){
+	.gallery{
+		padding: 30px 10px;
+	}
+}
+@media (min-width: 478px){
+	.gallery .gg-element:nth-child(3n+0){
+		grid-row-end: span 1;
+	}
+}
+.text-sm{
+	font-size: 12px;
+}
+.feedback-div{
+	top: -70px;
+	right: 0px;
+}
+footer .footer-links ul{
+	margin-bottom: 15px;
+	list-style-type: none;
+}
+footer .footer-links ul li{
+	float: left;
+	width: 50%;
+	font-weight: 300;
+}
