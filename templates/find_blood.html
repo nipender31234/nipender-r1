@@ -1,0 +1,75 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+	<section class="contianer-fluid about-us">
+		<p class="search">
+			<strong><h3>Search for Blood Donor</h3></strong>
+		</p>
+		<form class="form-inline w-100" action="{% url 'find_blood' %}" method="GET">
+			<div class="form-group">
+				<label class="control-label mb-4">Blood Group</label>
+				<div class="col-md-4">
+					<select name="blood_group" class="form-control" required>
+						<option value="">Select</option>
+						<option value="A+" {% if request.GET.blood_group == 'A+' %}selected{%endif%}>A+</option>
+						<option value="B+" {% if request.GET.blood_group == 'B+' %}selected{%endif%}>B+</option>
+						<option value="AB+" {% if request.GET.blood_group == 'AB+' %}selected{%endif%}>AB+</option>
+						<option value="O+" {% if request.GET.blood_group == 'O+' %}selected{%endif%}>O+</option>
+						<option value="A-" {% if request.GET.blood_group == 'A-' %}selected{%endif%}>A-</option>
+						<option value="B-" {% if request.GET.blood_group == 'B-' %}selected{%endif%}>B-</option>
+						<option value="AB-" {% if request.GET.blood_group == 'AB-' %}selected{%endif%}>AB-</option>
+						<option value="O-" {% if request.GET.blood_group == 'O-' %}selected{%endif%}>O-</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label mb-4">Location</label>
+				<div class="col-md-4">
+					<select name="location" class="form-control" required>
+						<option value="">Select</option>
+						<option value="Delhi" {% if request.GET.location == 'Delhi' %}selected{%endif%}>Delhi</option>
+						<option value="Jaipur" {% if request.GET.location == 'Jaipur' %}selected{%endif%}>Jaipur</option>
+						<option value="Dhampur" {% if request.GET.location == 'Dhampur' %}selected{%endif%}>Dhampur</option>
+						<option value="Varanasi">Varanasi</option>
+						<option value="Udaipur">Udaipur</option>
+						<option value="Chennai">Chennai</option>
+						<option value="Bijnor">Bijnor</option>
+						<option value="Noorpur">Noorpur</option>
+						<option value="Kritpur">Kritpur</option>
+						<option value="chandpur">chandpur</option>
+					</select>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-success mb-4">Submit</button>
+		</form>
+	</section>
+	{% if doners %}
+		<section class="contianer-fluid pt-0 text-center">
+			<table class="table table-striped">
+			  <thead>
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">Name</th>
+			      <th scope="col">Phone</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			  	{% for doner in doners %}
+				    <tr>
+				      <th scope="row">1</th>
+				      <td>{{doner.user}}</td>
+				      <td>{{doner.contact}}</td>
+				    </tr>
+				    {% endfor %}
+			  </tbody>
+			</table>
+		</section>
+	{% else %}
+		<section class="contianer-fluid pt-0 text-center">
+			<p class="search"><h3> No available Donors</h3></p>
+		</section>
+	{% endif %}
+
+{% endblock %}

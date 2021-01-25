@@ -1,0 +1,79 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<form class="form-center" action="{% url 'add_doner' %}" method="POST">
+  {% csrf_token %}
+  <fieldset>
+  <legend>Register as a blood donor and save lives</legend>
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="contact">Contact no.</label>  
+    <div class="col-md-4">
+    <input id="contact" name="contact" type="text" placeholder="Enter your contact no." class="form-control input-md" required="">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="blood_group">Blood Group</label>
+    <div class="col-md-4">
+      <select id="blood_group" name="blood_group" class="form-control">
+        <option>Select</option>
+        <option value="A+">A+</option>
+        <option value="B+">B+</option>
+        <option value="AB+">AB+</option>
+        <option value="O+">O+</option>
+        <option value="A-">A-</option>
+        <option value="B-">B-</option>
+        <option value="AB-">AB-</option>
+        <option value="O-">O-</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="street">Address</label>  
+    <div class="col-md-4">
+    <input name="address" type="text" placeholder="Enter your Address" class="form-control input-md" required="">
+      
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="city">City</label>  
+    <div class="col-md-4">
+    <select name="city" class="form-control" required>
+      <option value="">Select</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Jaipur">Jaipur</option>
+      <option value="Dhampur">Dhampur</option>
+      <option value="Varanasi">Varanasi</option>
+      <option value="Udaipur">Udaipur</option>
+      <option value="Chennai">Chennai</option>
+      <option value="Bijnor">Bijnor</option>
+      <option value="Noorpur">Noorpur</option>
+      <option value="Kritpur">Kritpur</option>
+      <option value="chandpur">chandpur</option>
+    </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="dist">District</label>  
+    <div class="col-md-4">
+    <input id="dist" name="district" type="text" placeholder="Enter your district" class="form-control input-md" required="">
+      
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="signup"></label>
+    <div class="col-md-4">
+      <input type="hidden" name="user" value="{{request.session.profile_id}}">
+      <button id="Register" name="Register" class="btn btn-success">Register</button>
+    </div>
+  </div>
+  </fieldset>
+</form>
+
+<section class="contianer-fluid about-us">
+	<h2>Giving blood is a quick and enriching way to give back to your community.</h2>
+	<p>By donating blood, you can help families who have been in accidents or experienced trauma, mothers experiencing labor complications, fathers having heart surgery, children undergoing chemotherapy treatments, premature babies trying to breathe with tiny lungs, or grandparents suffering from severe anemia.
+	In as little as few minutes, you can become someones unnamed, unknown, but all-important hero. Saving a life is noble work that starts very simply and easily.</p>
+</section>
+
+{% endblock %}
