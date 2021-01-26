@@ -76,17 +76,17 @@ WSGI_APPLICATION = 'donate.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
     # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'postgres',
-    #     'USER': 'postgres',
-    #     'PASSWORD': 'root',
-    #     'HOST': 'localhost',
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'db46fk534ceh4i',
+        'USER': 'ucuuouimdqrogm',
+        'PASSWORD': 'a50c7884cb987fdaa7dbd04341aaddd68c698bc27e908da81dbdc6d7e629d593',
+        'HOST': 'ec2-3-216-181-219.compute-1.amazonaws.com',
+    }
 }
 
 
